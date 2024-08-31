@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Teaser | Macmahon - Experienced Boilermaker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 5px auto;
+            padding: 5px;
+            background-color: #f0f0f0;
+        }
+        .job-teaser {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            border: 2px solid #0066cc;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            background-color: #0066cc;
+            padding: 10px;
+        }
+        .logo {
+            width: 150px;
+            height: auto;
+            margin-right: 10px;
+        }
+        .job-title {
+            color: white;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 0;
+            flex-grow: 1;
+            text-align: center;
+        }
+        .content {
+            padding: 5px;
+            position: relative;
+            overflow: hidden;
+            min-height: 160px;
+        }
+        .slide {
+            display: none;
+            animation: fadeEffect 0.5s;
+        }
+        .slide.active {
+            display: block;
+        }
+        @keyframes fadeEffect {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        .nav-dots {
+            text-align: center;
+            margin-top: 2px;
+        }
+        .dot {
+            height: 8px;
+            width: 8px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 3px;
+            cursor: pointer;
+        }
+        .dot.active {
+            background-color: #0066cc;
+        }
+        .full-ad-toggle {
+            text-align: right;
+            padding: 2px 5px;
+            background-color: #f0f0f0;
+            font-size: 0.9em;
+        }
+        .full-job-ad {
+            display: none;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-top: 1px solid #ddd;
+            font-size: 0.9em;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .apply-button {
+            display: block;
+            width: 100%;
+            padding: 8px;
+            background-color: #0066cc;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+        .apply-button:hover {
+            background-color: #0052a3;
+        }
+        h2 {
+            margin: 5px 0;
+            color: #0066cc;
+            font-size: 1.1em;
+        }
+        ul {
+            margin: 3px 0;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 2px;
+        }
+        p {
+            margin: 3px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="job-teaser">
+        <div class="header">
+            <img src="https://imgur.com/S3e4OBW.png" alt="Macmahon Logo" class="logo">
+            <h1 class="job-title">Experienced Boilermaker</h1>
+        </div>
+        <div class="content">
+            <div class="slide active">
+                <h2>Job Overview</h2>
+                <p>Join the Tropicana Gold Mine Project team:</p>
+                <ul>
+                    <li>🏗️ Repair and fabricate metal components for Surface MOBILE Mining equipment</li>
+                    <li>✈️ FIFO from Perth with 2:1 Days/Nights roster</li>
+                    <li>💰 7% market uplift bonus - paid quarterly</li>
+                </ul>
+            </div>
+            <div class="slide">
+                <h2>Key Responsibilities</h2>
+                <ul>
+                    <li>🔧 Repair and fabricate metal components</li>
+                    <li>🔥 Perform welding, gouging, and cutting duties</li>
+                    <li>📊 Complete weekly bucket and blade condition reports</li>
+                    <li>🛠️ Undertake laboring duties as required</li>
+                </ul>
+            </div>
+            <div class="slide">
+                <h2>Requirements</h2>
+                <ul>
+                    <li>🎓 Australian Recognised Trade Certificate</li>
+                    <li>🏭 Experience in mine site environment preferred</li>
+                    <li>👨‍🏭 Proficient in MIG/TIG/STICK welding, air arc gouging, cutting, and lancing</li>
+                    <li>🚗 Australian Manual Driver's License (mandatory)</li>
+                </ul>
+            </div>
+            <div class="slide">
+                <h2>Benefits</h2>
+                <ul>
+                    <li>💼 Competitive remuneration & rewards</li>
+                    <li>📈 Ongoing career development opportunities</li>
+                    <li>🧘‍♂️ Dedicated lifestyle, financial, and mental health support</li>
+                    <li>💳 Employee discounts with retail, vehicle, insurance, and banking partners</li>
+                </ul>
+            </div>
+        </div>
+        <div class="nav-dots">
+            <span class="dot active" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+        <div class="full-ad-toggle">
+            <label for="fullAdToggle">Show Full Job Ad</label>
+            <input type="checkbox" id="fullAdToggle" onclick="toggleFullAd()">
+        </div>
+        <div class="full-job-ad" id="fullJobAd">
+            <h2>Full Job Description</h2>
+            <p><strong>Position:</strong> Experienced Boilermaker</p>
+            <p><strong>Location:</strong> Tropicana Gold Mine, 330km east-northeast of Kalgoorlie, Western Australia</p>
+            <p><strong>Company:</strong> Macmahon - A leading Australian contract mining company</p>
+            
+            <h3>About the Role:</h3>
+            <p>Join the Tropicana Gold Mine Project team as an EXPERIENCED Boilermaker responsible for repairing and fabricating metal components of various Surface MOBILE Mining equipment. FIFO from Perth with a 2:1 Days/Nights roster and 7% market uplift bonus paid quarterly.</p>
+
+            <h3>Key Responsibilities:</h3>
+            <ul>
+                <li>Repair and fabricate any metal components</li>
+                <li>Perform welding, gouging, cutting or other duties as specified by Supervisor</li>
+                <li>Complete weekly bucket and blade condition reports</li>
+                <li>Access metal required to repair or fabricate components</li>
+                <li>Undertake laboring duties as required</li>
+            </ul>
+
+            <h3>Requirements:</h3>
+            <ul>
+                <li>Previous experience in a similar role, preferably within mine site environment</li>
+                <li>Australian Recognised Trade Certificate</li>
+                <li>Experience with on-site repairs (e.g., excavator bucket and truck tray body rebuilds)</li>
+                <li>Proficiency in welding (MIG/TIG/STICK), air arc gouging, cutting, and lancing</li>
+                <li>Ability to read and work according to engineering drawings and work plans</li>
+                <li>Strong interpersonal and communication skills</li>
+                <li>Commitment to Macmahon safety culture and values</li>
+                <li>Australian Manual Driver's License (mandatory)</li>
+            </ul>
+
+            <h3>Benefits:</h3>
+            <ul>
+                <li>Competitive remuneration & rewards</li>
+                <li>Ongoing career development opportunities</li>
+                <li>Dedicated lifestyle, financial, and mental health support</li>
+                <li>Salary sacrifice options for flights, vehicles & airport parking</li>
+                <li>Employee discounts with Macmahon's retail, vehicle, insurance, and banking partners</li>
+            </ul>
+
+            <p>Macmahon is an equal opportunity employer committed to fostering a diverse and inclusive workplace.</p>
+        </div>
+        <a href="https://www.seek.com.au/Boilermaker-jobs/in-Kalgoorlie-WA-6430?jobId=78493844&type=standout" class="apply-button" target="_blank">Apply Now</a>
+    </div>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("slide");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");  
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].classList.remove("active");
+            }
+            slides[slideIndex-1].classList.add("active");  
+            dots[slideIndex-1].classList.add("active");
+        }
+
+        function toggleFullAd() {
+            const fullJobAd = document.getElementById("fullJobAd");
+            const checkbox = document.getElementById("fullAdToggle");
+            fullJobAd.style.display = checkbox.checked ? "block" : "none";
+        }
+
+        // Auto-slide functionality
+        setInterval(() => {
+            plusSlides(1);
+        }, 5000); // Change slide every 5 seconds
+    </script>
+</body>
+</html>
